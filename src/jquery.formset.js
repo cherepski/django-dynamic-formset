@@ -117,10 +117,10 @@
             }
             if (hasChildElements(row)) {
                 row.addClass(options.formCssClass);
-                if (row.is(':visible')) {
+                //if (row.is(':visible')) {
                     insertDeleteLink(row);
                     applyExtraClasses(row, i);
-                }
+                //}
             }
         });
 
@@ -172,7 +172,8 @@
             }
             addButton.click(function() {
                 var formCount = parseInt(totalForms.val()),
-                    row = options.formTemplate.clone(true).removeClass('formset-custom-template'),
+                    //row = options.formTemplate.clone(true).removeClass('formset-custom-template'),
+                    row = options.formTemplate.clone(false).removeClass('formset-custom-template'),
                     buttonRow = $($(this).parents('tr.' + options.formCssClass + '-add').get(0) || this);
                 applyExtraClasses(row, formCount);
                 row.insertBefore(buttonRow).show();
